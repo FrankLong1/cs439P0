@@ -1,0 +1,1 @@
+./sdriver.pl -t trace05.txt -s ./msh -a "-p"

@@ -1,0 +1,20 @@
+YOUR RUN ON LEFT, REFERENCE RUN ON RIGHT
+DIFFS FOR TRACE #02:
+		#								#
+		# trace02.txt - Process builtin quit command.			# trace02.txt - Process builtin quit command.
+		#								#
+		evaluating builtin 					      <-------------------------------------------
+DIFFS FOR TRACE #03:
+		#								#
+		# trace03.txt - Run a foreground job.				# trace03.txt - Run a foreground job.
+		#								#
+		evaluating builtin evaluating builtin msh> quit		      |	msh> quit
+-------------------------------------------
+DIFFS FOR TRACE #04:
+		#								#
+		# trace04.txt - Run a background job.				# trace04.txt - Run a background job.
+		#								#
+		evaluating builtin evaluating builtin [2] (pid) ./myspin 1 &  <
+		msh> ./myspin 1 &						msh> ./myspin 1 &
+									      >	[1] (pid) ./myspin 1 &
+-------------------------------------------

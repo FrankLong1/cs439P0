@@ -1,0 +1,55 @@
+
+YOUR RUN #01:
+./sdriver.pl -t trace01.txt -s ./msh -a "-p"
+#
+# trace01.txt - Properly terminate on EOF.
+#
+-------------------------------------------
+REFERENCE RUN #01:
+./sdriver.pl -t trace01.txt -s ./mshref -a "-p"
+#
+# trace01.txt - Properly terminate on EOF.
+#
+-------------------------------------------
+YOUR RUN #02:
+./sdriver.pl -t trace02.txt -s ./msh -a "-p"
+#
+# trace02.txt - Process builtin quit command.
+#
+evaluating builtin -------------------------------------------
+REFERENCE RUN #02:
+./sdriver.pl -t trace02.txt -s ./mshref -a "-p"
+#
+# trace02.txt - Process builtin quit command.
+#
+-------------------------------------------
+YOUR RUN #03:
+./sdriver.pl -t trace03.txt -s ./msh -a "-p"
+#
+# trace03.txt - Run a foreground job.
+#
+evaluating builtin evaluating builtin msh> quit
+-------------------------------------------
+REFERENCE RUN #03:
+./sdriver.pl -t trace03.txt -s ./mshref -a "-p"
+#
+# trace03.txt - Run a foreground job.
+#
+msh> quit
+-------------------------------------------
+YOUR RUN #04:
+./sdriver.pl -t trace04.txt -s ./msh -a "-p"
+#
+# trace04.txt - Run a background job.
+#
+evaluating builtin evaluating builtin [2] (933) ./myspin 1 &
+msh> ./myspin 1 &
+-------------------------------------------
+REFERENCE RUN #04:
+./sdriver.pl -t trace04.txt -s ./mshref -a "-p"
+#
+# trace04.txt - Run a background job.
+#
+msh> ./myspin 1 &
+[1] (950) ./myspin 1 &
+-------------------------------------------
